@@ -1,0 +1,791 @@
+Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 27 2016, 15:24:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> print "Hello World!"
+Hello World!
+>>> print 'Hello World!'
+Hello World!
+>>> print '''Hello
+World'''
+Hello
+World
+>>> print """Hello
+World"""
+Hello
+World
+>>> print "What's going on"
+What's going on
+>>> 
+>>> 
+>>> 
+>>> 
+>>> a = 10
+>>> b = 11.2
+>>> c = 'Hello'
+>>> d = True
+>>> 
+>>> 
+>>> type(a)
+<type 'int'>
+>>> print a
+10
+>>> a
+10
+>>> print a,b,c,d
+10 11.2 Hello True
+>>> print type(a), type(b), type(c), type(d)
+<type 'int'> <type 'float'> <type 'str'> <type 'bool'>
+>>> True, False
+(True, False)
+>>> a = c
+>>> a
+'Hello'
+>>> 10 + 4
+14
+>>> 10 * 4
+40
+>>> a = 10 * 4
+>>> a
+40
+>>> 10 ** 2
+100
+>>> (10+4) * 3
+42
+>>> a = 3
+>>> b = 4
+>>> a / b
+0
+>>> b / a
+1
+>>> a * 1.0 /b
+0.75
+>>> a / (b * 1.0)
+0.75
+>>> type(a)
+<type 'int'>
+>>> float(a) / b
+0.75
+>>> type(a)
+<type 'int'>
+>>> a / float(b)
+0.75
+>>> 
+>>> 
+>>> s = 'Hello'
+>>> s + 'Again'
+'HelloAgain'
+>>> s
+'Hello'
+>>> s = s + 'Again'
+>>> s
+'HelloAgain'
+>>> s = 'Hello'
+>>> s * 3
+'HelloHelloHello'
+>>> print '-----------------------------'
+-----------------------------
+>>> print '-' * 50
+--------------------------------------------------
+>>> s + 5
+
+Traceback (most recent call last):
+  File "<pyshell#52>", line 1, in <module>
+    s + 5
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> '5' + 5
+
+Traceback (most recent call last):
+  File "<pyshell#53>", line 1, in <module>
+    '5' + 5
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> a = '5'
+>>> b= 5
+>>> a + b
+
+Traceback (most recent call last):
+  File "<pyshell#56>", line 1, in <module>
+    a + b
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> a + str(b)
+'55'
+>>> int(a) + b
+10
+>>> 
+>>> 
+>>> s
+'Hello'
+>>> s = 'Hello World'
+>>> len(s)
+11
+>>> s[0]
+'H'
+>>> s[10]
+'d'
+>>> s[11]
+
+Traceback (most recent call last):
+  File "<pyshell#66>", line 1, in <module>
+    s[11]
+IndexError: string index out of range
+>>> s[-1]
+'d'
+>>> s[-3]
+'r'
+>>> s[-11]
+'H'
+>>> s[-12]
+
+Traceback (most recent call last):
+  File "<pyshell#70>", line 1, in <module>
+    s[-12]
+IndexError: string index out of range
+>>> s
+'Hello World'
+>>> s[0:5]
+'Hello'
+>>> s[0:1000]
+'Hello World'
+>>> s[0:1000:1]
+'Hello World'
+>>> s[0:1000:2]
+'HloWrd'
+>>> s[6:10]
+'Worl'
+>>> s = 'abcdefghij'
+>>> len(s)
+10
+>>> s[2:9]
+'cdefghi'
+>>> s[2:9:1]
+'cdefghi'
+>>> s[9:2]
+''
+>>> s[9:2:-1]
+'jihgfed'
+>>> s[-9:7]
+'bcdefg'
+>>> s[7:-9:-1]
+'hgfedc'
+>>> s[0:1000]
+'abcdefghij'
+>>> s[5:]
+'fghij'
+>>> s[0:4]
+'abcd'
+>>> s[:4]
+'abcd'
+>>> s[:]
+'abcdefghij'
+>>> s[::1]
+'abcdefghij'
+>>> s[::-1]
+'jihgfedcba'
+>>> 
+>>> 
+>>> 
+>>> import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> s
+'abcdefghij'
+>>> s = 'Hello World'
+>>> len(s)
+11
+>>> s.upper()
+'HELLO WORLD'
+>>> s
+'Hello World'
+>>> s_u = s.upper()
+>>> s_u
+'HELLO WORLD'
+>>> s
+'Hello World'
+>>> a
+'5'
+>>> b
+5
+>>> b.upper()
+
+Traceback (most recent call last):
+  File "<pyshell#112>", line 1, in <module>
+    b.upper()
+AttributeError: 'int' object has no attribute 'upper'
+>>> s.lower()
+'hello world'
+>>> s.startswith('he')
+False
+>>> s
+'Hello World'
+>>> s.startswith('He')
+True
+>>> s = '      \n    hello     '
+>>> s.strip()
+'hello'
+>>> s = 'the discovery of India'
+>>> s.split()
+['the', 'discovery', 'of', 'India']
+>>> l = s.split()
+>>> type(l)
+<type 'list'>
+>>> s = 'asldjf,asldjl,asdljlkjw'
+>>> s.split(',')
+['asldjf', 'asldjl', 'asdljlkjw']
+>>> s = '1::2::3::4'
+>>> s.split('::')
+['1', '2', '3', '4']
+>>> 
+>>> 
+>>> l = ['India','China', 'USA', 'UK']
+>>> li = ['India','China', 'USA', 'UK']
+>>> len(li)
+4
+>>> li[2]
+'USA'
+>>> li[-1]
+'UK'
+>>> li[::-1]
+['UK', 'USA', 'China', 'India']
+>>> li[2:]
+['USA', 'UK']
+>>> s
+'1::2::3::4'
+>>> s = 'hello'
+>>> s.upper()
+'HELLO'
+>>> li.upper()
+
+Traceback (most recent call last):
+  File "<pyshell#139>", line 1, in <module>
+    li.upper()
+AttributeError: 'list' object has no attribute 'upper'
+>>> li
+['India', 'China', 'USA', 'UK']
+>>> li[5]
+
+Traceback (most recent call last):
+  File "<pyshell#141>", line 1, in <module>
+    li[5]
+IndexError: list index out of range
+>>> li
+['India', 'China', 'USA', 'UK']
+>>> li[-1] = 'France'
+>>> li
+['India', 'China', 'USA', 'France']
+>>> li.append('UK')
+>>> li
+['India', 'China', 'USA', 'France', 'UK']
+>>> b = ['Brazil','Burma','Kenya']
+>>> li.extend(b)
+>>> li
+['India', 'China', 'USA', 'France', 'UK', 'Brazil', 'Burma', 'Kenya']
+>>> sorted(li)
+['Brazil', 'Burma', 'China', 'France', 'India', 'Kenya', 'UK', 'USA']
+>>> li
+['India', 'China', 'USA', 'France', 'UK', 'Brazil', 'Burma', 'Kenya']
+>>> sorted_li = sorted(li)
+>>> sorted_li
+['Brazil', 'Burma', 'China', 'France', 'India', 'Kenya', 'UK', 'USA']
+>>> li.sort()
+>>> li
+['Brazil', 'Burma', 'China', 'France', 'India', 'Kenya', 'UK', 'USA']
+>>> li
+['Brazil', 'Burma', 'China', 'France', 'India', 'Kenya', 'UK', 'USA']
+>>> li.remove('Burma')
+>>> li
+['Brazil', 'China', 'France', 'India', 'Kenya', 'UK', 'USA']
+>>> li.pop()
+'USA'
+>>> li
+['Brazil', 'China', 'France', 'India', 'Kenya', 'UK']
+>>> x= li.pop()
+>>> x
+'UK'
+>>> li.pop(3)
+'India'
+>>> li
+['Brazil', 'China', 'France', 'Kenya']
+>>> b
+['Brazil', 'Burma', 'Kenya']
+>>> del b
+>>> b
+
+Traceback (most recent call last):
+  File "<pyshell#167>", line 1, in <module>
+    b
+NameError: name 'b' is not defined
+>>> li
+['Brazil', 'China', 'France', 'Kenya']
+>>> del li[1]
+>>> li
+['Brazil', 'France', 'Kenya']
+>>> li.insert(1, 'USA')
+>>> li
+['Brazil', 'USA', 'France', 'Kenya']
+>>> li.insert(-1, 'UK')
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya']
+>>> 
+>>> 
+>>> 
+>>> a = True
+>>> if a :
+	print "Truthful"
+
+	
+Truthful
+>>> a = 10
+>>> if a < 10:
+	print "Single digit"
+else:
+	print "may be a double digit"
+
+	
+may be a double digit
+>>> if a < 10:
+	print "Single digit"
+elif a < 100:
+	print "Double digit"
+else:
+	print "2+ digit"
+
+	
+Double digit
+>>> a < 100
+True
+>>> x = 3
+>>>  y = 5
+ 
+  File "<pyshell#192>", line 2
+    y = 5
+    ^
+IndentationError: unexpected indent
+>>> x = 3
+>>> y = 5
+>>> x > 3 and x < 5
+False
+>>> x >= 3 and x < 5
+True
+>>> x > 3 or x < 5
+True
+>>> not x > 3
+True
+>>> l
+['India', 'China', 'USA', 'UK']
+>>> 'China' in l
+True
+>>> s = 'www.google.com'
+>>> 'www' in s
+True
+>>> 1 <> 2
+True
+>>> 1 == 2
+False
+>>> 1 != 2
+True
+>>> ip = 192.168.33.10
+SyntaxError: invalid syntax
+>>> ip = '192.168.33.10'
+>>> ip.split('.')
+['192', '168', '33', '10']
+>>> ip_list = ip.split('.')
+>>> ip_list
+['192', '168', '33', '10']
+>>> ip_list[-1]
+'10'
+>>> int(ip_list[-1])
+10
+>>> int(ip_list[-1]) + 1
+11
+>>> str(int(ip_list[-1]) + 1)
+'11'
+>>> ip_list
+['192', '168', '33', '10']
+>>> ip_list[-1] = str(int(ip_list[-1]) + 1)
+>>> ip_list
+['192', '168', '33', '11']
+>>> ".".join(ip_list)
+'192.168.33.11'
+>>> x = raw_input('he :')
+he :asd
+>>> x
+'asd'
+>>> ,\l
+SyntaxError: invalid syntax
+>>> l
+['India', 'China', 'USA', 'UK']
+>>> for item in l:
+	print item
+
+	
+India
+China
+USA
+UK
+>>> ip_list
+['192', '168', '33', '11']
+>>> for part in ip_list:
+	print part
+
+	
+192
+168
+33
+11
+>>> for part in ip_list:
+	if not(int(part) > 0 and int(part) < 255):
+		print "Wrong"
+
+		
+>>> ip_list = ['300', '168', '33', '11']
+>>> for part in ip_list:
+	if not(int(part) > 0 and int(part) < 255):
+		print "Wrong"
+
+		
+Wrong
+>>> for part in ip_list:
+	if not(int(part) > 0 and int(part) < 255):
+		print "Wrong", part
+
+		
+Wrong 300
+>>> x
+'asd'
+>>> y
+5
+>>> 3 < y and y < 10
+True
+>>> 3 < y < 10
+True
+>>> 0 < int(part) < 255
+True
+>>> len(s)
+14
+>>> type(a)
+<type 'int'>
+>>> #dir(__builtins__)
+>>> 
+>>> 
+>>> dir(s)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BufferError', 'BytesWarning', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'NameError', 'None', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'ReferenceError', 'RuntimeError', 'RuntimeWarning', 'StandardError', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '_', '__debug__', '__doc__', '__import__', '__name__', '__package__', 'abs', 'all', 'any', 'apply', 'basestring', 'bin', 'bool', 'buffer', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'cmp', 'coerce', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'execfile', 'exit', 'file', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'intern', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'long', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'raw_input', 'reduce', 'reload', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'unichr', 'unicode', 'vars', 'xrange', 'zip']
+>>> random.randint(0,100)
+
+Traceback (most recent call last):
+  File "<pyshell#251>", line 1, in <module>
+    random.randint(0,100)
+NameError: name 'random' is not defined
+>>> import random
+>>> random.randint(0,100)
+62
+>>> random.randint(0,100)
+68
+>>> random.randint(0,100)
+81
+>>> random.randint(0,100)
+79
+>>> random.randint(0,100)
+48
+>>> l = [56,78,90]
+>>> "-->".join(l)
+
+Traceback (most recent call last):
+  File "<pyshell#259>", line 1, in <module>
+    "-->".join(l)
+TypeError: sequence item 0: expected string, int found
+>>> l = ['56','78','90']
+>>> "-->".join(l)
+'56-->78-->90'
+>>> 
+>>> 
+>>> 
+>>> b = ['Brazil','Burma','Kenya']
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya']
+>>> li.append('Japan')
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya', 'Japan']
+>>> li.extend(b)
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya', 'Japan', 'Brazil', 'Burma', 'Kenya']
+>>> li = ['Brazil', 'USA', 'France', 'UK', 'Kenya']
+>>> b
+['Brazil', 'Burma', 'Kenya']
+>>> li.append(b)
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya', ['Brazil', 'Burma', 'Kenya']]
+>>> li[-1]
+['Brazil', 'Burma', 'Kenya']
+>>> li = ['Brazil', 'USA', 'France', 'UK', 'Kenya']
+>>> li.extend('Afghanistan')
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya', 'A', 'f', 'g', 'h', 'a', 'n', 'i', 's', 't', 'a', 'n']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> t = ()
+>>> type(t)
+<type 'tuple'>
+>>> a_t = ('batman','spiderman','ironman')
+>>> len(a_t)
+3
+>>> a_t[0]
+'batman'
+>>> a_t[1:]
+('spiderman', 'ironman')
+>>> a_t[0]='Antman'
+
+Traceback (most recent call last):
+  File "<pyshell#292>", line 1, in <module>
+    a_t[0]='Antman'
+TypeError: 'tuple' object does not support item assignment
+>>> a_t = 'batman','spiderman','ironman'
+>>> a_t
+('batman', 'spiderman', 'ironman')
+>>> type(a_t)
+<type 'tuple'>
+>>> len(a_t)
+3
+>>> a,b,c = a_t
+>>> a
+'batman'
+>>> b
+'spiderman'
+>>> c
+'ironman'
+>>> 
+>>> 
+>>> 
+>>> a
+'batman'
+>>> b
+'spiderman'
+>>> a,b = b,a
+>>> a
+'spiderman'
+>>> b
+'batman'
+>>> a,b = 'xy'
+>>> a
+'x'
+>>> b
+'y'
+>>> a,b = ['India','USA']
+>>> a
+'India'
+>>> b
+'USA'
+>>> li
+['Brazil', 'USA', 'France', 'UK', 'Kenya', 'A', 'f', 'g', 'h', 'a', 'n', 'i', 's', 't', 'a', 'n']
+>>> li = ['Brazil', 'USA', 'France', 'UK']
+>>> li
+['Brazil', 'USA', 'France', 'UK']
+>>> for c in li:
+	print c
+
+	
+Brazil
+USA
+France
+UK
+>>> for item in enumerate(li):
+	print item
+
+	
+(0, 'Brazil')
+(1, 'USA')
+(2, 'France')
+(3, 'UK')
+>>> for item in enumerate(li):
+	
+	print item[1], 'found at', item[0]
+
+	
+Brazil found at 0
+USA found at 1
+France found at 2
+UK found at 3
+>>> for item in enumerate(li):
+	idx, c = item
+	print c, 'found at', idx
+
+	
+Brazil found at 0
+USA found at 1
+France found at 2
+UK found at 3
+>>> for idx,c in enumerate(li):
+	print c, 'found at', idx
+
+	
+Brazil found at 0
+USA found at 1
+France found at 2
+UK found at 3
+>>> 
+>>> 
+>>> 
+>>> d = { 'name': 'Aditya', 'email': 'sp.aditya@gmail.com'}
+>>> len(d)
+2
+>>> d[0]
+
+Traceback (most recent call last):
+  File "<pyshell#336>", line 1, in <module>
+    d[0]
+KeyError: 0
+>>> d['name']
+'Aditya'
+>>> d['email']
+'sp.aditya@gmail.com'
+>>> d.keys()
+['name', 'email']
+>>> d.values()
+['Aditya', 'sp.aditya@gmail.com']
+>>> d.items()
+[('name', 'Aditya'), ('email', 'sp.aditya@gmail.com')]
+>>> d['city']
+
+Traceback (most recent call last):
+  File "<pyshell#342>", line 1, in <module>
+    d['city']
+KeyError: 'city'
+>>> d['city'] = 'Bangalore'
+>>> d
+{'city': 'Bangalore', 'name': 'Aditya', 'email': 'sp.aditya@gmail.com'}
+>>> d['city'] = 'New York'
+>>> d
+{'city': 'New York', 'name': 'Aditya', 'email': 'sp.aditya@gmail.com'}
+>>> 
+>>> 
+>>> d
+{'city': 'New York', 'name': 'Aditya', 'email': 'sp.aditya@gmail.com'}
+>>> d['phone'] = ['2342434234','5675523423']
+>>> d
+{'city': 'New York', 'name': 'Aditya', 'phone': ['2342434234', '5675523423'], 'email': 'sp.aditya@gmail.com'}
+>>> d['phone']
+['2342434234', '5675523423']
+>>> d['phone'][-1]
+'5675523423'
+>>> d['address'] = { 'work': 'sdlfkjaljer', 'home':'lasjdfljwen }
+		 
+SyntaxError: EOL while scanning string literal
+>>> d['address'] = { 'work': 'sdlfkjaljer', 'home':'lasjdfljwen' }
+>>> d
+{'city': 'New York', 'address': {'home': 'lasjdfljwen', 'work': 'sdlfkjaljer'}, 'name': 'Aditya', 'phone': ['2342434234', '5675523423'], 'email': 'sp.aditya@gmail.com'}
+>>> d['address']['home']
+'lasjdfljwen'
+>>> d['age']
+
+Traceback (most recent call last):
+  File "<pyshell#358>", line 1, in <module>
+    d['age']
+KeyError: 'age'
+>>> d.get('age', 18)
+18
+>>> d.get('email', 'x@gmail.com')
+'sp.aditya@gmail.com'
+>>> #sp.aditya+oracle@gmail.com
+>>> #sp.aditya+dunkin@gmail.com
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def sayhi():
+	print "Hi"
+
+	
+>>> sayhi()
+Hi
+>>> def sayhi():
+	"a tiny function which says a cheerful hi"
+	print "Hi"
+
+	
+>>> sayhi()
+Hi
+>>> sayhi.__doc__
+'a tiny function which says a cheerful hi'
+>>> len.__doc__
+'len(object) -> integer\n\nReturn the number of items of a sequence or collection.'
+>>> s.split.__doc__
+'S.split([sep [,maxsplit]]) -> list of strings\n\nReturn a list of the words in the string S, using sep as the\ndelimiter string.  If maxsplit is given, at most maxsplit\nsplits are done. If sep is not specified or is None, any\nwhitespace string is a separator and empty strings are removed\nfrom the result.'
+>>> print s.split.__doc__
+S.split([sep [,maxsplit]]) -> list of strings
+
+Return a list of the words in the string S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are removed
+from the result.
+>>> def sayhi():
+	"a tiny function which says a cheerful hi"
+	print "Hi"
+
+	
+>>> 
+>>> 
+>>> 
+>>> # f(x) = x + 3
+>>> #f(3) = 6
+def sayhi():
+	"a tiny function which says a cheerful hi"
+	return "Hi"
+
+>>> x = sayhi()
+>>> def sayhi():
+	"a tiny function which says a cheerful hi"
+	print "Hi"
+	return "Hi"
+
+>>> x = sayhi()
+Hi
+>>> x
+'Hi'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def full_name(fn, ln):
+	return fn + " " + ln
+
+>>> full_name('John', 'Doe')
+'John Doe'
+>>> full_name('Doe', 'John')
+'Doe John'
+>>> full_name(fn = 'John', ln = 'Doe')
+'John Doe'
+>>> full_name(ln = 'Doe', fn = 'John')
+'John Doe'
+>>> 

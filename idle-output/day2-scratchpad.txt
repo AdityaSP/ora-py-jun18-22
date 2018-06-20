@@ -1,0 +1,312 @@
+Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 27 2016, 15:24:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+>>> def full_name(fn, ln):
+	return fn + " " + ln
+
+>>> full_name('John','Doe')
+'John Doe'
+>>> full_name(fn='John', ln='Doe')
+'John Doe'
+>>> 
+>>> def full_name(fn, ln, title='mr'):
+	return title.capitalize() + "."+ fn + " " + ln
+
+>>> full_name('Aditya', 'SP')
+'Mr.Aditya SP'
+>>> full_name('Aditya', 'SP', 'dr')
+'Dr.Aditya SP'
+>>> l = [56,78,23,45,78,90]
+>>> sorted(l)
+[23, 45, 56, 78, 78, 90]
+>>> sorted(l, reverse=True)
+[90, 78, 78, 56, 45, 23]
+>>> full_name('Aditya', 'SP', title = 'dr')
+'Dr.Aditya SP'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> a = 10
+>>> def sayhi():
+	return "hi"
+
+>>> type(a)
+<type 'int'>
+>>> type(sayhi)
+<type 'function'>
+>>> 
+>>> 
+>>> b = a
+>>> greet = sayhi
+>>> type(b)
+<type 'int'>
+>>> type(greet)
+<type 'function'>
+>>> greet()
+'hi'
+>>> 
+>>> 
+>>> def execother(f):
+	print type(f)
+
+	
+>>> execother(sayhi)
+<type 'function'>
+>>> def execother(f):
+	print f()
+
+	
+>>> execother(sayhi)
+hi
+>>> 
+>>> # HIgher order functions
+>>> 
+>>> 
+>>> 
+>>> kms = [5,10,21,42]
+>>> def kmtomi(x):
+	returns x * 0.62
+	
+SyntaxError: invalid syntax
+>>> 
+>>> def kmtomi(x):
+	return x * 0.62
+
+>>> kms
+[5, 10, 21, 42]
+>>> mi = []
+>>> for km in kms:
+	mi.append(kmtomi(km))
+
+	
+>>> mi
+[3.1, 6.2, 13.02, 26.04]
+>>> map(kmtomi, kms)
+[3.1, 6.2, 13.02, 26.04]
+>>> mi = map(kmtomi, kms)
+>>> 
+>>> 
+>>> for km in kms:
+	mi.append(kmtomi(km))
+
+	
+>>> mi
+[3.1, 6.2, 13.02, 26.04, 3.1, 6.2, 13.02, 26.04]
+>>> mi = map(kmtomi, kms)
+>>> mi = map(kmtomi, kms)
+>>> mi = map(kmtomi, kms)
+>>> mi
+[3.1, 6.2, 13.02, 26.04]
+>>> 
+>>> 
+>>> s = ['hello','what','where']
+>>> # convert the above list of strings to list of upper case strings
+>>> def tou(x):
+	return x.upper()
+
+>>> map(tou, s)
+['HELLO', 'WHAT', 'WHERE']
+>>> 
+>>> 
+>>> ages = [12,23,34,56,67,78,89]
+>>> def inrange(x):
+	return 30 < x < 70
+
+>>> inrange(12)
+False
+>>> inrange(56)
+True
+>>> filter(inrange, ages)
+[34, 56, 67]
+>>> ages
+[12, 23, 34, 56, 67, 78, 89]
+>>> s
+['hello', 'what', 'where']
+>>> "::".join(s)
+'hello::what::where'
+>>> a = 10
+>>> a
+10
+>>> 
+>>> 
+>>> 
+>>> s = '23,45,67,89,'
+>>> s = '23,45,67,89'
+>>> s.split(',')
+['23', '45', '67', '89']
+>>> ages
+[12, 23, 34, 56, 67, 78, 89]
+>>> sum(ages)
+359
+>>> int('23')
+23
+>>> map(int, s.split(','))
+[23, 45, 67, 89]
+>>> sum(map(int, s.split(',')))
+224
+>>> 
+>>> 
+>>> 
+>>> l
+[56, 78, 23, 45, 78, 90]
+>>> s = ['china', 'usa','UK','Japan']
+>>> sorted(s)
+['Japan', 'UK', 'china', 'usa']
+>>> tou('china')
+'CHINA'
+>>> def tou(x):
+	return x.upper()
+
+>>> sorted(s, key = tou)
+['china', 'Japan', 'UK', 'usa']
+>>> s = ['w','ewer','tyurty','sadfsadfwer','wer','dfgdfg']
+>>> sorted(s, key = len)
+['w', 'wer', 'ewer', 'tyurty', 'dfgdfg', 'sadfsadfwer']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 10
+10
+>>> 'Hello'
+'Hello'
+>>> def kmtomi(x):
+	return x * 0.62
+
+>>> lambda x: x * 0.62
+<function <lambda> at 0x00000000030C55F8>
+>>> f = lambda x: x * 0.62
+>>> f(5)
+3.1
+>>> f = lambda x, y: x + y
+>>> f(5,6)
+11
+>>> 
+>>> 
+>>> def add(x,y):
+	return x + y
+
+>>> m = 3
+>>> n = 4
+>>> add(m,n)
+7
+>>> add(3,4)
+7
+>>> kms
+[5, 10, 21, 42]
+>>> map( lambda x : x * 0.62 , kms)
+[3.1, 6.2, 13.02, 26.04]
+>>> ages
+[12, 23, 34, 56, 67, 78, 89]
+>>> filter (lambda x : 30 < x < 70, ages)
+[34, 56, 67]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> mi = []
+>>> for km in kms:
+	mi.append(kmtomi(km))
+
+	
+>>> map( lambda x : x * 0.62 , kms)
+[3.1, 6.2, 13.02, 26.04]
+>>> 
+>>> [ km * 0.62 for km in kms ]
+[3.1, 6.2, 13.02, 26.04]
+>>> 
+>>> 
+>>> 
+>>> ages
+[12, 23, 34, 56, 67, 78, 89]
+>>> filter (lambda x : 30 < x < 70, ages)
+[34, 56, 67]
+>>> map( lambda x : x * 12, filter (lambda x : 30 < x < 70, ages))
+[408, 672, 804]
+>>> [ age * 12 for age in ages if 30<age<70]
+[408, 672, 804]
+>>> 
+>>> 
+>>> 
+>>> a = 'a quick brown fox jumps over the lazy dog'
+>>> a.count('o')
+4
+>>> d = { c:a.count(c)  for c in a}
+>>> len(d)
+27
+>>> d
+{' ': 8, 'a': 2, 'c': 1, 'b': 1, 'e': 2, 'd': 1, 'g': 1, 'f': 1, 'i': 1, 'h': 1, 'k': 1, 'j': 1, 'm': 1, 'l': 1, 'o': 4, 'n': 1, 'q': 1, 'p': 1, 's': 1, 'r': 2, 'u': 2, 't': 1, 'w': 1, 'v': 1, 'y': 1, 'x': 1, 'z': 1}
+>>> d = { c:a.count(c)  for c in a if a.count(c)> 1}
+>>> d
+{'a': 2, ' ': 8, 'e': 2, 'o': 4, 'r': 2, 'u': 2}
+>>> 
+>>> 
+>>> 
+>>> 
+>>> s = 'chrome.exe                   13228 Console                    1    180,352 K'
+>>> s.split()
+['chrome.exe', '13228', 'Console', '1', '180,352', 'K']
+>>> s.split()[1]
+'13228'
+>>> s.split(' ')
+['chrome.exe', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '13228', 'Console', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1', '', '', '', '180,352', 'K']
+>>> s.split()
+['chrome.exe', '13228', 'Console', '1', '180,352', 'K']
+>>> s = 'System Idle Process              0 Services                   0          4 K'
+>>> s.split()
+['System', 'Idle', 'Process', '0', 'Services', '0', '4', 'K']
+>>> int('1,020')
+
+Traceback (most recent call last):
+  File "<pyshell#180>", line 1, in <module>
+    int('1,020')
+ValueError: invalid literal for int() with base 10: '1,020'
+>>> '1,020'.replace(',', '')
+'1020'
+>>> '1020'.replace(',', '')
+'1020'
+>>> import mymathlib
+
+Traceback (most recent call last):
+  File "<pyshell#183>", line 1, in <module>
+    import mymathlib
+ImportError: No module named mymathlib
+>>> import sys
+>>> sys.path
+['', 'D:\\sw\\Python27\\Lib\\idlelib', 'C:\\Users\\Dell lap\\Desktop\\Python\\microfocus\\jun18-21', 'C:\\WINDOWS\\SYSTEM32\\python27.zip', 'D:\\sw\\Python27\\DLLs', 'D:\\sw\\Python27\\lib', 'D:\\sw\\Python27\\lib\\plat-win', 'D:\\sw\\Python27\\lib\\lib-tk', 'D:\\sw\\Python27', 'D:\\sw\\Python27\\lib\\site-packages', 'D:\\sw\\Python27\\lib\\site-packages\\openpyxl-2.5.0a2-py2.7.egg', 'D:\\sw\\Python27\\lib\\site-packages\\win32', 'D:\\sw\\Python27\\lib\\site-packages\\win32\\lib', 'D:\\sw\\Python27\\lib\\site-packages\\Pythonwin']
+>>> sys.path.append('C:\\Users\\Dell lap\\Desktop\\Python\\oracle\\online\\jun18-22\\proj')
+>>> sys.path
+['', 'D:\\sw\\Python27\\Lib\\idlelib', 'C:\\Users\\Dell lap\\Desktop\\Python\\microfocus\\jun18-21', 'C:\\WINDOWS\\SYSTEM32\\python27.zip', 'D:\\sw\\Python27\\DLLs', 'D:\\sw\\Python27\\lib', 'D:\\sw\\Python27\\lib\\plat-win', 'D:\\sw\\Python27\\lib\\lib-tk', 'D:\\sw\\Python27', 'D:\\sw\\Python27\\lib\\site-packages', 'D:\\sw\\Python27\\lib\\site-packages\\openpyxl-2.5.0a2-py2.7.egg', 'D:\\sw\\Python27\\lib\\site-packages\\win32', 'D:\\sw\\Python27\\lib\\site-packages\\win32\\lib', 'D:\\sw\\Python27\\lib\\site-packages\\Pythonwin', 'C:\\Users\\Dell lap\\Desktop\\Python\\oracle\\online\\jun18-22\\proj']
+>>> import mymathlib
+>>> mymathlib.add(5,6)
+From mymathlib
+11
+>>> sys.path.remove('C:\\Users\\Dell lap\\Desktop\\Python\\microfocus\\jun18-21')
+>>> sys.path
+['', 'D:\\sw\\Python27\\Lib\\idlelib', 'C:\\WINDOWS\\SYSTEM32\\python27.zip', 'D:\\sw\\Python27\\DLLs', 'D:\\sw\\Python27\\lib', 'D:\\sw\\Python27\\lib\\plat-win', 'D:\\sw\\Python27\\lib\\lib-tk', 'D:\\sw\\Python27', 'D:\\sw\\Python27\\lib\\site-packages', 'D:\\sw\\Python27\\lib\\site-packages\\openpyxl-2.5.0a2-py2.7.egg', 'D:\\sw\\Python27\\lib\\site-packages\\win32', 'D:\\sw\\Python27\\lib\\site-packages\\win32\\lib', 'D:\\sw\\Python27\\lib\\site-packages\\Pythonwin', 'C:\\Users\\Dell lap\\Desktop\\Python\\oracle\\online\\jun18-22\\proj']
+>>> import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+>>> 
