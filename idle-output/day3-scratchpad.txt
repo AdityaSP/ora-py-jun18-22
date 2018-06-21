@@ -1,0 +1,421 @@
+Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 27 2016, 15:24:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> class Car():
+	pass
+
+>>> f = Car()
+>>> a = int()
+>>> a
+0
+>>> type(a)
+<type 'int'>
+>>> type(f)
+<type 'instance'>
+>>> class Bus():
+	pass
+
+>>> b1 = Bus()
+>>> type(b1)
+<type 'instance'>
+>>> a = int()
+>>> s = str()
+>>> type(a), type(s)
+(<type 'int'>, <type 'str'>)
+>>> type(a) == type(s)
+False
+>>> type(f) , type(b1)
+(<type 'instance'>, <type 'instance'>)
+>>> type(f) == type(b1)
+True
+>>> class Car(object):
+	pass
+
+>>> class Bus(object):
+	pass
+
+>>> c1 = Car()
+>>> b1 = Bus()
+>>> type(c1), type(b1)
+(<class '__main__.Car'>, <class '__main__.Bus'>)
+>>> type(c1) == type(b1)
+False
+>>> print __name__
+__main__
+>>> class Car(object):
+	def __init__(self):
+		print "In Here"
+
+		
+>>> c1 = Car()
+In Here
+>>> class Car(object):
+	def __init__(self):
+		self.name = 'City'
+		self.brand = 'Honda'
+
+		
+>>> c1 = Car()
+>>> c1.name
+'City'
+>>> c1.brand
+'Honda'
+>>> c2 = Car()
+>>> c2.name, c2.brand
+('City', 'Honda')
+>>> class Car(object):
+	def __init__(self, b, n):
+		self.name = n
+		self.brand = b
+
+		
+>>> c1 = Car()
+
+Traceback (most recent call last):
+  File "<pyshell#42>", line 1, in <module>
+    c1 = Car()
+TypeError: __init__() takes exactly 3 arguments (1 given)
+>>> c1 = Car('Honda', 'City')
+>>> c1.name, c1.brand
+('City', 'Honda')
+>>> c2 = Car('Ford', 'Endeavour')
+>>> c2.name, c2.brand
+('Endeavour', 'Ford')
+>>> class Car(object):
+	def __init__(self, b, n):
+		self.name = n
+		self.brand = b
+	def drive(self, where):
+		print self.name, 'drives to', where
+
+		
+>>> c1 = Car('Honda', 'City')
+>>> c1.drive('office')
+City drives to office
+>>> 
+>>> 
+>>> class LB(object):
+	def breathe(self):
+		print "I breathe"
+
+		
+>>> class HB(object):
+	def breathe(self):
+		print "I breathe"
+
+		
+>>> #is LB a HB?
+>>> #is HB a LB?
+>>> class LB(object):
+	def breathe(self):
+		print "I breathe"
+
+		
+>>> class HB(LB):
+	pass
+
+>>> obj = HB()
+>>> obj.breathe()
+I breathe
+>>> class HB(LB):
+	def metathink(self):
+		print "I think therefore I am"
+
+		
+>>> obj = HB()
+>>> obj.breathe()
+I breathe
+>>> obj.metathink()
+I think therefore I am
+>>> class HB(LB):
+	def metathink(self):
+		print "I think therefore I am"
+	def breathe(self):
+		print "Through lungs"
+
+		
+>>> obj = HB()
+>>> obj.breathe()
+Through lungs
+>>> class HB(LB):
+	def metathink(self):
+		print "I think therefore I am"
+	def breathe(self):
+		LB.breathe(self)
+		print "Through lungs"
+
+		
+>>> obj = HB()
+>>> obj.breathe()
+I breathe
+Through lungs
+>>> l = [1,2,3]
+>>> l[4]
+
+Traceback (most recent call last):
+  File "<pyshell#90>", line 1, in <module>
+    l[4]
+IndexError: list index out of range
+>>> err = IndexError()
+>>> raise err
+
+Traceback (most recent call last):
+  File "<pyshell#92>", line 1, in <module>
+    raise err
+IndexError
+>>> err = IndexError('Wrong index')
+>>> raise err
+
+Traceback (most recent call last):
+  File "<pyshell#94>", line 1, in <module>
+    raise err
+IndexError: Wrong index
+>>> 10/0
+
+Traceback (most recent call last):
+  File "<pyshell#95>", line 1, in <module>
+    10/0
+ZeroDivisionError: integer division or modulo by zero
+>>> name
+
+Traceback (most recent call last):
+  File "<pyshell#96>", line 1, in <module>
+    name
+NameError: name 'name' is not defined
+>>> sw
+
+Traceback (most recent call last):
+  File "<pyshell#97>", line 1, in <module>
+    sw
+NameError: name 'sw' is not defined
+>>> obj
+<__main__.HB object at 0x000000000302B0F0>
+>>> 
+>>> 
+>>> 
+>>> obj
+<__main__.HB object at 0x000000000302B0F0>
+>>> dir(obj)
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'breathe', 'metathink']
+>>> obj.height = 6
+>>> dir(obj)
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'breathe', 'height', 'metathink']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> import re
+>>> 
+>>> 
+>>> t = 'hello there'
+>>> p = 'hello'
+>>> m = re.search(p,t)
+>>> m
+<_sre.SRE_Match object at 0x0000000003026440>
+>>> m.start(), m.end()
+(0, 5)
+>>> t[m.start():m.end()]
+'hello'
+>>> 
+>>> 
+>>> t = 'hello there hello'
+>>> p = 'hello'
+>>> m = re.search(p,t)
+>>> m.start(), m.end()
+(0, 5)
+>>> re.findall(p,t)
+['hello', 'hello']
+>>> for m in re.finditer(p,t):
+	print "Found at", m.start(), m.end()
+
+	
+Found at 0 5
+Found at 12 17
+>>> 
+>>> 
+>>> 
+>>> t = 'sasasas'
+>>> p = 'sas'
+>>> re.findall(p,t)
+['sas', 'sas']
+>>> 
+>>> 
+>>> 
+>>> t = 'xxyxyyyxyyyyyxyyy'
+>>> p = 'xy*'
+>>> re.findall(p,t)
+['x', 'xy', 'xyyy', 'xyyyyy', 'xyyy']
+>>> 
+>>> 
+>>> p = 'xy+'
+>>> re.findall(p,t)
+['xy', 'xyyy', 'xyyyyy', 'xyyy']
+>>> 
+>>> 
+>>> p = 'xy?'
+>>> re.findall(p,t)
+['x', 'xy', 'xy', 'xy', 'xy']
+>>> p = 'xy{2}'
+>>> re.findall(p,t)
+['xyy', 'xyy', 'xyy']
+>>> p = 'xy{0,3}'
+>>> re.findall(p,t)
+['x', 'xy', 'xyyy', 'xyyy', 'xyyy']
+>>> 
+>>> 
+>>> t = 'Usd 200'
+>>> t = 'USD 999'
+>>> p = '9+'
+>>> re.findall(p,t)
+['999']
+>>> p = '[0123456789]+'
+>>> re.findall(p,t)
+['999']
+>>> t = 'Usd 200'
+>>> re.findall(p,t)
+['200']
+>>> p = '[0-9]+'
+>>> re.findall(p,t)
+['200']
+>>> p = '[a-z]+'
+>>> re.findall(p,t)
+['sd']
+>>> p = '[A-Za-z]+'
+>>> re.findall(p,t)
+['Usd']
+>>> t = 'INR 200'
+>>> re.findall(p,t)
+['INR']
+>>> p = '\d+'
+>>> re.findall(p,t)
+['200']
+>>> p = '[0-9.]+'
+>>> t = 'usd 900.98'
+>>> re.findall(p,t)
+['900.98']
+>>> p = '[0-9]+\.[0-9]+'
+>>> re.findall(p,t)
+['900.98']
+>>>  t='usd 100'
+ 
+  File "<pyshell#183>", line 2
+    t='usd 100'
+    ^
+IndentationError: unexpected indent
+>>> t = 'usd 100'
+>>> p='[0123456789]?'
+>>> re.findall(p,t)
+['', '', '', '', '1', '0', '0', '']
+>>> 
+>>> 
+>>> t = 'Date: 10-05-2018'
+>>> p = '\d{2}-\d{2}-\d{4}'
+>>> p = r'\d{2}-\d{2}-\d{4}'
+>>> re.findall(p,t)
+['10-05-2018']
+>>> p = r'(\d{2})-(\d{2})-(\d{4})'
+>>> re.findall(p,t)
+[('10', '05', '2018')]
+>>> m = re.search(p,t)
+>>> m.group(0)
+'10-05-2018'
+>>> m.group(1)
+'10'
+>>> m.group(2)
+'05'
+>>> m.group(3)
+'2018'
+>>> t = 'Date: 10-05-2018  Date: 11-06-2019'
+>>> p = r'(\d{2})-(\d{2})-(\d{4})'
+>>> re.findall(p,t)
+[('10', '05', '2018'), ('11', '06', '2019')]
+>>> 
+>>> 
+>>> t = 'Mfg Date: 10-05-2018  Exp Date: 11-06-2020'
+>>> 
+>>> p = r'Exp Date: \d{2}-\d{2}-\d{4}'
+>>> re.findall(p,t)
+['Exp Date: 11-06-2020']
+>>> p = r'Exp Date: (\d{2}-\d{2}-\d{4})'
+>>> re.findall(p,t)
+['11-06-2020']
+>>> t = 'Date: 10-05-2018  Date: 11-06-2019'
+>>> p = r'(\d{2})-(\d{2})-(\d{4})'
+>>> for m in re.finditer():
+	print m.group(0), m.group(1), m.group(2), m.group(3)
+
+	
+
+Traceback (most recent call last):
+  File "<pyshell#215>", line 1, in <module>
+    for m in re.finditer():
+TypeError: finditer() takes at least 2 arguments (0 given)
+>>> for m in re.finditer(p,t):
+	print m.group(0), m.group(1), m.group(2), m.group(3)
+
+	
+10-05-2018 10 05 2018
+11-06-2019 11 06 2019
+>>> l = [m for m in re.finditer(p,t)]
+>>> l
+[<_sre.SRE_Match object at 0x0000000002F97458>, <_sre.SRE_Match object at 0x0000000002F973C0>]
+>>> l[-1].group(0), l[-1].group(1), l[-1].group(2), l[-1].group(3)
+('11-06-2019', '11', '06', '2019')
+>>> t = 'www.google.com'
+>>> t = 'http://localhost'
+>>> p = 'www|http'
+>>> re.findall(p,t)
+['http']
+>>> t = 'www.google.com'
+>>> re.findall(p,t)
+['www']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> t = 'man eats mango'
+>>> p = 'man|mango'
+>>> re.findall(p,t)
+['man', 'man']
+>>> p = 'mango|man'
+>>> re.findall(p,t)
+['man', 'mango']
+>>> 
+>>> 
+>>> p = 'man(go)?'
+>>> re.findall(p,t)
+['', 'go']
+>>> for m in re.finditer(p,t):
+	print m.group(0)
+
+	
+man
+mango
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> t = 'class strength is 30. Only 12 present'
+>>> t = 'class strength is 30. Only 12 present.'
+>>> p = '.+(\d+)\.'
+>>> re.findall(p,t)
+['0']
+>>> t = 'class strength is 309. Only 12 present.'
+>>> re.findall(p,t)
+['9']
+>>> m = re.search(p,t)
+>>> m.group(0)
+'class strength is 309.'
+>>> p = '.+?(\d+)\.'
+>>> re.findall(p,t)
+['309']
+>>> m = re.search(p,t)
+>>> m.group(0)
+'class strength is 309.'
+>>> 
